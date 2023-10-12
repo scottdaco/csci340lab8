@@ -1,0 +1,44 @@
+@page
+@model lab8.Pages_Lizard.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Lizard</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Lizard.name" class="control-label"></label>
+                <input asp-for="Lizard.name" class="form-control" />
+                <span asp-validation-for="Lizard.name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lizard.region" class="control-label"></label>
+                <input asp-for="Lizard.region" class="form-control" />
+                <span asp-validation-for="Lizard.region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lizard.length" class="control-label"></label>
+                <input asp-for="Lizard.length" class="form-control" />
+                <span asp-validation-for="Lizard.length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
